@@ -2,8 +2,9 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const https = require("https");
-
-app.listen(3000,()=>console.log("Server has started"))
+const host = '0.0.0.0';
+const port = process.env.PORT || 3000
+app.listen(port,host,()=>console.log("Server has started"))
 app.get("/",function(req,res){
     
     res.sendFile(__dirname+"/signup.html")
